@@ -113,15 +113,17 @@ class MarkdownHeaderButtonElement extends MarkdownButtonElement {
   constructor() {
     super()
 
-    const level = parseInt(this.getAttribute('level') || '3', 10)
-    if (level < 1 || level > 6) {
-      return
-    }
+    setTimeout(() => {
+      const level = parseInt(this.getAttribute('level') || '3', 10)
+      if (level < 1 || level > 6) {
+        return
+      }
 
-    const prefix = `${'#'.repeat(level)} `
-    styles.set(this, {
-      prefix
-    })
+      const prefix = `${'#'.repeat(level)} `
+      styles.set(this, {
+        prefix
+      })
+    }, 0)
   }
 }
 
